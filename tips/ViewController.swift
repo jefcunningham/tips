@@ -11,14 +11,21 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var billField: UITextField!
-    @IBOutlet weak var tipLabel: UILabel!
-    @IBOutlet weak var totalLabel: UILabel!
-    @IBOutlet weak var tipControl: UISegmentedControl!
+    @IBOutlet weak var mehTipLabel: UILabel!
+    @IBOutlet weak var mehTotalLabel: UILabel!
+    @IBOutlet weak var goodTipLabel: UILabel!
+    @IBOutlet weak var goodTotalLabel: UILabel!
+    @IBOutlet weak var epicTipLabel: UILabel!
+    @IBOutlet weak var epicTotalLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tipLabel.text = "$0.00"
-        totalLabel.text = "$0.00"
+        mehTipLabel.text = "-"
+        mehTotalLabel.text = "-"
+        goodTipLabel.text = "-"
+        goodTotalLabel.text = "-"
+        epicTipLabel.text = "-"
+        epicTotalLabel.text = "-"
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,15 +36,22 @@ class ViewController: UIViewController {
     @IBAction func onEditingChanged(sender: AnyObject) {
         println("User editing bill")
         
-        var tipPercentages = [0.18, 0.2, 0.25]
-        var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         var billAmount = NSString(string: billField.text).doubleValue
-        // this is a comment
-        var tip = billAmount * tipPercentage
-        var total = billAmount + tip
         
-        tipLabel.text = String(format: "$%.2f", tip)
-        totalLabel.text = String(format: "$%.2f", total)
+        var mehTip = billAmount * 0.15
+        var mehTotal = billAmount + mehTip
+        var goodTip = billAmount * 0.18
+        var goodTotal = billAmount + goodTip
+        var epicTip = billAmount * 0.2
+        var epicTotal = billAmount + epicTip
+        
+        mehTipLabel.text = String(format: "$%.2f", mehTip)
+        mehTotalLabel.text = String(format: "$%.2f", mehTotal)
+        goodTipLabel.text = String(format: "$%.2f", goodTip)
+        goodTotalLabel.text = String(format: "$%.2f", goodTotal)
+        epicTipLabel.text = String(format: "$%.2f", epicTip)
+        epicTotalLabel.text = String(format: "$%.2f", epicTotal)
+        
         
     }
 

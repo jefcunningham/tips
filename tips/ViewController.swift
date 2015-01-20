@@ -17,6 +17,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var goodTotalLabel: UILabel!
     @IBOutlet weak var epicTipLabel: UILabel!
     @IBOutlet weak var epicTotalLabel: UILabel!
+    @IBOutlet weak var doneCover: UIImageView!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,8 +58,26 @@ class ViewController: UIViewController {
         
     }
 
+    @IBAction func onEditingDidBegin(sender: AnyObject) {
+        let duration = 0.2
+        let delay = 0.0
+        let options = UIViewAnimationOptions.CurveEaseInOut
+        
+        UIView.animateWithDuration(duration, delay: delay, options: options, animations: {
+            // animate the cover up over the cup people
+            self.doneCover.frame = CGRect(x: 0, y: 175, width: 320, height: 395)
+            }, completion: { finished in
+                // enter code here to do once animation is completed
+        })
+    }
+    
+    
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
+        UIView.animateWithDuration(0.4, animations: {
+            // animate the cover outta the way
+            self.doneCover.frame = CGRect(x: 0, y: 640, width: 320, height: 395)
+        })
     }
     
 }

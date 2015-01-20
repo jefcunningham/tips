@@ -14,8 +14,6 @@ Notes:
 
 I created the initial segmented selector interaction but decided it would be a better user experience to see all levels of tips at the same time grouped in a fun way by whether the service was considered: Meh, Good or Epic.
 
-Walkthrough of all user stories:
+Animated Walkthrough of app:
 
-![Video Walkthrough](anim_rotten_tomatoes.gif)
-
-GIF created with [LiceCap](http://www.cockos.com/licecap/).
+![My Walkthrough](http://static1.squarespace.com/static/5166f73be4b035d74831035c/t/54bdae5be4b08f92b1728a84/1421717122178/?format=500w)
